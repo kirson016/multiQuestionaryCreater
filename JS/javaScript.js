@@ -13,13 +13,12 @@ $(document).ready(function() {
     }
 
     class questionnaire {
-        constructor(name, question, answers, time, data, answersNumber) {
+        constructor(name, question, answers, time, data) {
             this.name = name;
             this.question = question;
             this.answers = answers;
             this.time = time;
             this.data = data;
-            this.optionsNumber = answersNumber;
             this.number = numberOfQuestionnaire;
             numberOfQuestionnaire++;
         }
@@ -62,6 +61,33 @@ $(document).ready(function() {
 
     }
 
+    class questionnair {
+        constructor(name,  time, data, answersNumber) {
+            this.name = name;
+            this.time = time;
+            this.data = data;
+            this.optionsNumber = answersNumber;
+            this.number = numberOfQuestionnaire;
+            numberOfQuestionnaire++;
+            var questionContent = new Array;
+        }
+
+    class question {
+        constructor(question, time) {
+            this.question = question;
+            this.time = time;
+            var answersContent = new Array;
+        }
+    }
+
+    class answer {
+        constructor(answer) {
+            this.answer = answer;
+        }
+    }
+
+
+
     function adjust_textarea(h) {
         h.style.height = "30px";
         h.style.height = (h.scrollHeight) + "px";
@@ -71,7 +97,7 @@ $(document).ready(function() {
         $(".inputsPossition").css("visibility", "visible");
     });
 
-    $('.createQuestionnaire').on('click', function() {
+    $('.createQuestion').on('click', function() {
         var classAnswersArray = [];
         var className = $(".questionnaireName").val();
         var classQuestion = $(".questionnaireQuestion").val();
