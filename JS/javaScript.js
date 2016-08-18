@@ -13,12 +13,13 @@ $(document).ready(function() {
     }
 
     class questionnaire {
-        constructor(name, question, answers, time, data) {
+        constructor(name, question, answers, time, data, answersNumber) {
             this.name = name;
             this.question = question;
             this.answers = answers;
             this.time = time;
             this.data = data;
+            this.optionsNumber = answersNumber;
             this.number = numberOfQuestionnaire;
             numberOfQuestionnaire++;
         }
@@ -62,11 +63,9 @@ $(document).ready(function() {
     }
 
     class questionnair {
-        constructor(name,  time, data, answersNumber) {
+        constructor(name,  data) {
             this.name = name;
-            this.time = time;
             this.data = data;
-            this.optionsNumber = answersNumber;
             this.number = numberOfQuestionnaire;
             numberOfQuestionnaire++;
             var questionContent = new Array;
