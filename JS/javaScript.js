@@ -63,13 +63,14 @@ $(document).ready(function() {
     }
 
     class questionnair {
-        constructor(name,  data) {
+        constructor(name, data) {
             this.name = name;
             this.data = data;
             this.number = numberOfQuestionnaire;
             numberOfQuestionnaire++;
             var questionContent = new Array;
         }
+    }
 
     class question {
         constructor(question, time) {
@@ -215,6 +216,22 @@ $(document).ready(function() {
                 $('#search').val(" ");
             }
         }
+    });
+
+    $('.createQuestionnaire').on('click', function() {
+      var myjson;
+        $.getJSON("http://localhost:8888/questionnaires/1", function(result) {
+           myjson = result;
+            $.each(result, function(i, field) {
+                alert(field);
+            });
+            // var arr = JSON.parse( myjson );
+            alert(myjson.name);
+            alert(myjson.date);
+        });
+
+
+
     });
 
 });
